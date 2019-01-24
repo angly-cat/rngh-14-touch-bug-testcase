@@ -1,12 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, TextInput, View } from 'react-native';
 
-export default class App extends React.Component {
+import { RectButton } from 'react-native-gesture-handler';
+
+export default class App extends React.PureComponent {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+        <View style={styles.container}>
+          <TextInput
+              style={styles.textInput}
+              placeholder="Focus me!"
+          />
+          <RectButton style={styles.button} />
+        </View>
     );
   }
 }
@@ -14,8 +20,17 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  textInput: {
+    width: 100,
+    borderWidth: 1,
+    borderColor: 'black',
+  },
+  button: {
+    width: 100,
+    height: 100,
+    backgroundColor: 'dodgerblue',
   },
 });
